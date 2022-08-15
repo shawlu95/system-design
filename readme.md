@@ -58,3 +58,4 @@ Answer follow-up questions, including:
 ## Example Problems
 
 - Design [Rate Limiter](./examples/design_rate_limiter.md)
+- Design [Consistent Hashing](./examples/design_consistent_hashing.md)
