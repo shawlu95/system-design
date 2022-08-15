@@ -26,7 +26,7 @@ Ask the right questions:
 - what specific features
 - how many users, traffic
 - scaling plan
-- tech stack (mobile/web)
+- tech stack (mobile/web): language, cache service
 
 ### 2. Propose High-level Design (10-15 mins)
 
@@ -36,7 +36,7 @@ Make a initial design and ask for feedback
 - back-of-the-envelope estimation on storage
 - look for edge cases
 
-### 3. Design Deep Dive( 10-25 mins)
+### 3. Design Deep Dive (10-25 mins)
 
 Depending on job level, the interview may focus on high-level design, or performance characteristics (bottleneck)
 
@@ -52,3 +52,9 @@ Answer follow-up questions, including:
 - failure cases
 - operation and monitoring (metrics, error logs)
 - scale to next level
+
+---
+
+## Example Problems
+
+- Design [Rate Limiter](./examples/design_rate_limiter.md)
