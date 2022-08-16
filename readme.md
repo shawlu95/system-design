@@ -62,3 +62,4 @@ Answer follow-up questions, including:
 - Design [Key-Value Store](./examples/design_key_value_store.md)
 - Design [Unique ID Generator](./examples/design_unique_id_generator.md)
 - Design [URL Shortener](./examples/design_url_shortener.md)
+- Design [Web Crawler](./examples/design_web_crawler.md)
