@@ -24,3 +24,9 @@ To resolve: each server gets multiple virtual nodes. The more virtual nodes, the
 
 - easy to scale horizontally
 - mitigate hotspot (hotkey) problem
+
+## Real-world
+
+- Amazon Dynamo, Apache Cassandra
+- CDN Akamai
+- Google load balancer

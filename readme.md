@@ -59,3 +59,4 @@ Answer follow-up questions, including:
 
 - Design [Rate Limiter](./examples/design_rate_limiter.md)
 - Design [Consistent Hashing](./examples/design_consistent_hashing.md)
+- Design [Key-Value Store](./examples/design_key_value_store.md)
