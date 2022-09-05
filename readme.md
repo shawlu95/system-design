@@ -63,6 +63,7 @@ Answer follow-up questions, including:
 - Design [Unique ID Generator](./examples/design_unique_id_generator.md)
 - Design [URL Shortener](./examples/design_url_shortener.md)
 - Design [Web Crawler](./examples/design_web_crawler.md)
+- Design [Notification System](./examples/design_notification_system.md)
 - Design [News Feed](./examples/design_news_feed.md)
 - Design [Chat Systen](./examples/design_chat_system.md)
 - Design [Auto-complete](./examples/design_auto_complete.md)
