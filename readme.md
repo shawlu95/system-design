@@ -65,3 +65,4 @@ Answer follow-up questions, including:
 - Design [Web Crawler](./examples/design_web_crawler.md)
 - Design [News Feed](./examples/design_news_feed.md)
 - Design [Chat Systen](./examples/design_chat_system.md)
+- Design [Auto-complete](./examples/design_auto_complete.md)
