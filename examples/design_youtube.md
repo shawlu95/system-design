@@ -95,6 +95,25 @@ Cost-saving
 - some popular videos are only popular in specific countries
 - partnering with Internet Service Providers (ISP) for better pricing
 
+Erorr handling:
+
+- recoverable errors: on server side, can just retry, fallback, replace failed nodes etc
+- irrecoverable errors: bad file format, incomplete upload, authentication, return error to clinet and abandone all DAG tasks
+
+Examples of recoverable errors:
+
+- upload errors: retry
+- split video errors: client cannot split, then split on servers
+- transcoding error: retry
+- preprocessor error: regenerate DAG
+- scheduler error: reschedule tasks
+- task workers down: assign tasks to other workers, add workers nodes
+- API server down: spin up new servers, reroute failed requests
+- meta cache down: access other cache nodes, add new cache nodes to replace failed ones
+- meta DB down:
+  - master down: promote slave to master
+  - slave down: use another slave, add more slaves
+
 ### 4. Wrap-up
 
 - easy to scale API servers horizontally (stateless)

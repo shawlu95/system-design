@@ -67,3 +67,4 @@ Answer follow-up questions, including:
 - Design [Chat Systen](./examples/design_chat_system.md)
 - Design [Auto-complete](./examples/design_auto_complete.md)
 - Design [YouTube](./examples/design_youtube.md)
+- Design [Google Drive](./examples/design_google_drive.md)
