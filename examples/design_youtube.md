@@ -32,7 +32,7 @@ Three major components
 - clients: can by any device
 - CDN: streams videos to client
 - API servers:
-  - has its load baalancers
+  - has its load balancers
   - handles authentication
   - metadata CRUD
   - user account management
@@ -40,7 +40,7 @@ Three major components
 
 Uploading:
 
-- raw video is uplaoded to "original storage"
+- raw video is uploaded to "original storage"
 - transcoding servers pull video from original storage
 
   - transform into different format, bitrate
@@ -68,8 +68,8 @@ Streaming:
 DAG to encode video
 
 - preprocessor: split videos into group of pictures (GOP), store in memory in case retry is needed
-- scheduler: split the workflow into stages and put in task queue of resoruce manager
-- resouce manager: can access three queues:
+- scheduler: split the workflow into stages and put in task queue of resource manager
+- resource manager: can access three queues:
   - task queues, a priority queue; pick the highest priority ans assign to available workers
   - worker queue
   - task scheduler: pick optimal worker for optimal task
