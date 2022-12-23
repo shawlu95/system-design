@@ -148,6 +148,20 @@
 - Amazon Gamelift: dedicated game servers
 - Amazon Lumberyard: game development env in the cloud
 
+### Elastic Beanstalk
+
+- ElasticBeanstalk: auto-handle capacity privisioning, load balancer, health monitoring
+  - app can be docker container, nodejs, python, ruby, go, java, nodejs etc.
+  - process: create application -> upload version -> launch environment -> manage environment -> update environment
+- highly available and fault tolerant
+
+### Deployment Options
+
+- all at once. Bad down time.
+- rolling deploy: e.g. 20 EC2, deploy to 2 EC at a time
+- immutable: deploy all 20 new EC2, shutdown old. Temporarily double capacity. Zero downtime.
+- blue-green: one for dev, one for prod. Switch between environment.
+
 ### References
 
 - aws.amazon.com/certification
