@@ -90,12 +90,34 @@
 - **AWS Directory Service**
 - **CloudHSM** hard-ware security module
 - **Cognito** sign-in, sign-out for mobile app, can integrate with Google
+  - continuously monitor and record changes
+  - assess, audit, evaluate the config of AWS resources
+  - integrated with **AWS Organization**
 - **IAM** manages user access to AWS services and resources using _users_ and _groups_
+  - takes some time to propagate globally, eventually consistent
+  - credential could be 1) password or 2) access key, max 2 per user
+  - users can be added to multiple groups, each with different roles
+  - group cannot contain groups
+  - by default, IAM user can access nothing
+  - max 5000 IAM users per account, need more? Federated users!
+- **resource-based policies** availablt to S3, Glacier, SBS, SQS, Key Management Service
+  - attached to resources,not users (IAM is attached to user group or role)
 - **AWS Organization** provide policy based management for multiple AWS accounts
+  - large company manages multiple AWS accounts
+  - **Service Control Policy** can whitelisting/blacklisting services in an Organizational Unit, even if IAM user/group policy allows it
 - **Amazon Inspector** identifies vulnerability in AWS account
 - **Key Management Services** create/control encryption keys for encrypted data; uses hardware security module to secure keys (for S3, Redshift, EBS etc)
 - **AWS Shield** auto-enabled, DDOS protection
 - **Web Aplication Firewall** protect against common attack, SQL inject, cross site scripting
+- **AWS Artifact** compliance related information
+
+### Shared Responsibility Model
+
+- AWS is responsible for low-level architecture (software, hardware, infra)
+- customers are responsible for what's put into AWS (e.g. server encryption, sensitive data)
+- Create users, groups, roles
+- **Identity Federation** verify user via 3rd party service (e.g. Google)
+- AWS takes more responsibility in managed services
 
 ### AWS Developer Tools
 
@@ -168,3 +190,5 @@
 - docs.aws.amazon.com
 - aws.amazon.com/whitepapers
 - aws.amazon.com/products
+- static website template: https://html5up.net/
+- check dns propagation: https://www.whatsmydns.net/
