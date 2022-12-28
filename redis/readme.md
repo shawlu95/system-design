@@ -159,6 +159,34 @@ Redis can be configured as volatile cache, persistence cache
 - `Streams`
 - `Strings`
 
+---
+
+## Caching at Scale
+
+- storage limit: amount of space available to cache data
+- resource limit: capability to perform storing and retrieving cached data (e.g CPU)
+- vertical scaling gets you higher resource limit
+
+### Horitontal scaling
+
+- read replicas:
+  - copy of the cache is on **auxiliary servers**
+  - write is processed at master node
+  - if master fails, one of the replica takes over the master role
+  - higher resource limit, same storage limit
+  - does not improve write performance
+- sharding/partitioning:
+  - improve both storage and resource limit
+  - each shard/partition holds a portion of the cache
+  - a **shard selector** will route key to a deterministic shard
+- active-active
+  - handle higher write and read throughput
+  - not increase storage limit, every node has complete copy of data
+  - any node can accept write, and publish to every other nodes
+  - increase availability
+  - write conflict: when two nodes accept the write to same key, with different value
+  - data lag: fresh write may not have been propagated to all nodes
+
 ### Reference
 
 - official site: https://redis.com/
