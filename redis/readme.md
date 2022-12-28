@@ -76,7 +76,13 @@ Why is Redis so fast
 
 ### Consistency
 
-Common strategy is to 'invalidate' cache (removing it
+Causess of inconsistency:
+
+- whe nunderlying data change, cache is not updated
+- there's delay in cahced results (write-behind async)
+- inconsistency across cached nodes (read replicas)
+
+Common strategy is to 'invalidate' cache (removing it).
 
 #### Write-through cache
 
@@ -170,7 +176,7 @@ Redis can be configured as volatile cache, persistence cache
 ### Horitontal scaling
 
 - read replicas:
-  - copy of the cache is on **auxiliary servers**
+  - copy of the cache is on **auxiliary servers** in different availability zones, regions, even cloud providers
   - write is processed at master node
   - if master fails, one of the replica takes over the master role
   - higher resource limit, same storage limit
@@ -186,6 +192,20 @@ Redis can be configured as volatile cache, persistence cache
   - increase availability
   - write conflict: when two nodes accept the write to same key, with different value
   - data lag: fresh write may not have been propagated to all nodes
+
+---
+
+## Performance
+
+- **cache overhead** is the cost of checking cache and adding a record to cache (cache check + cache write)
+- a **cache aside** setup would incur cache check on read request, and cache write in case of **cache miss**
+- heavier resource call, better cache performance
+- more cache hit, better cache performance
+- formula for a cache to be effective (can calculate the required cache hit rate)
+
+```
+(hit_rate * latency_cache_hit) + (miss_rate * latency_cache_miss) > request_time_no_cache
+```
 
 ### Reference
 
