@@ -106,9 +106,58 @@ When cache is full, **cache thrashing** can happen when item gets wrongly evicte
 - TTL eviction: data are given a period of time. Redis does this at key-level, not at policy level. Commonly used for **session**
 - cache persistence: larger than the underlying data store, never need to evict cache. If full, cache write will fail (evict all new data). This is Redis default.
 
-### Basic Command
+---
 
--
+## Advanced Concept
+
+Redis can be configured as volatile cache, persistence cache
+
+- volatile cache: erased when power is out, stored in RAM
+- cache persistence: persist during power outage and system reboots, stored in hard disk, SSD
+- hybrid is possible, backup RAM in disk, recover backup (**rehydration**) when reboot
+
+### Redis persistence options
+
+#### Append-only files
+
+- a real-time log of updates to the cache.
+- When replayed, cache state is reconstructed.
+- Append can happen sync (guarantee no data loss) or async or every second, depending on latency requirement
+- log can be 'cleaned' by removing old entries that no longer affect the end state
+
+#### point-in-time backup (RDB)
+
+- highly efficient, smallest possible backup file
+
+### Mixed RAM/SSD Caching with Redis Enterprise
+
+- open source can only store key in RAM
+- enterprise can store in RAM or SSD Flash memory (**Redis on Flash** or RoF)
+- LRU eviction policy: more active records in RAM, less active in SSD
+- significantly larger cache
+- AOF/RDB still required for persistence
+
+### One-liner
+
+- in-cache function: allow execute arbitrary function (e.g. python) within the cache database
+- async communication channel: connect different microservices using **Redis List object** (FIFO)
+- network-level cache: HTTP requests caching, managed by HTTP headers
+- microservice cache: between service, cache interim results, reduce call load on backend services
+- **RediSearch**: in Redis Enterprise, full-text search engine
+
+---
+
+## Data Structure
+
+### List
+
+- `List` data types with `LPUSH`, `RPOP`: FIFO queue for scheduling and messaging
+- `Set` data type: `SADD`, `SREM`, `SISMEMBER`
+- `Hashes` is a key-value property map in a key: `HSET`, `HMGET`, `HGETALL`
+- `RedisJSON` uses a Redis module, store any type of data: `JSON.SET`, `JSON.GET`
+- `SortedSet`
+- `Streams`
+- `Strings`
 
 ### Reference
 
