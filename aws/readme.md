@@ -11,6 +11,8 @@
 - SAAS: complete products ran in browser (email, Office365)
 - FAAS (serverless): function-as-a-service (S3, Lambda, DynamoDB, SNS)
 
+---
+
 ### Storage
 
 - S3: theoretically unlimited
@@ -27,6 +29,8 @@
   - S3, Glaciers, EFS are not in VPC
   - **VPC endpoint** controls traffic in & out of VPC
 
+---
+
 ### Networking
 
 - AWS Elastic Load Balancer: distirbute across multiple EC2 and AZ
@@ -37,6 +41,8 @@
 - **Route 53** domain name service
 - **API Gateways**: hundreds of thousands of concurrent calls, serverless
 - example pathway: API call -> Route 53 -> CloudFront -> Load Balancer -> EC2
+
+---
 
 ### Management Tools
 
@@ -49,17 +55,23 @@
 - **OpsWork**:
 - **Trusted Advisor** better achieve security and performance
 
+---
+
 ### Application Services
 
 - **SQS Queue** decouple requests from server
 - **CloudWatch Alarm** monitors queue length and trigger auto-scaling, send SNS notification
 - reduce instances if queue empty most of the time
 
+---
+
 ### Customer Engagement Services
 
 - **Amazon Connect** define customer interaction
 - **Amazon Pinpoint** send SNS message, email to customer (e.g. marketing campaign)
 - **Simple Email Service** send email in bulk
+
+---
 
 ### Analytics
 
@@ -71,6 +83,8 @@
 - **CloudSearch**: fully managed search engine service
 - **Amazon Open Search**: previously Elasticsearch
 
+---
+
 ### Machine Learning
 
 - **DeepLens**: deep learning enabled video camera
@@ -81,6 +95,8 @@
 - **Comprehend** analyze text, relationship
 - **Translate**
 - **Transcribe**: S3 audio to text
+
+---
 
 ### Security, Identity, Compliance
 
@@ -111,6 +127,8 @@
 - **Web Aplication Firewall** protect against common attack, SQL inject, cross site scripting
 - **AWS Artifact** compliance related information
 
+---
+
 ### Shared Responsibility Model
 
 - AWS is responsible for low-level architecture (software, hardware, infra)
@@ -118,6 +136,8 @@
 - Create users, groups, roles
 - **Identity Federation** verify user via 3rd party service (e.g. Google)
 - AWS takes more responsibility in managed services
+
+---
 
 ### AWS Developer Tools
 
@@ -129,6 +149,8 @@
 - **CodeBuild**
 - **CodeDeploy**
 
+---
+
 ### AWS Media Services
 
 - Elemental Media Convert
@@ -138,11 +160,15 @@
 - Elemental Media Store
 - Kinesis Video Stream
 
+---
+
 ### AWS Mobile Services
 
 - AWS Mobile Hub: one-place, cloud config file
 - AWS Device Farm: testing app against large collection of physical devices
 - AWS AppSync: **GraphQL** backend for mobile and web app
+
+---
 
 ### AWS Migration Services
 
@@ -150,6 +176,8 @@
 - AWS Database Migration Service: e.g. Oracle -> Aurora
 - AWS Server Migration Service: migrate on-premise workflow, minimize cost, down time
 - AWS Snowball: petabyte storage device to store on-premise data and mail to AWS by courier
+
+---
 
 ### Business Productivity & App Streaming
 
@@ -159,16 +187,22 @@
 - Amazon WorkSpaces: desktop as a service
 - Amazon AppStream: stream Desktop app to HTML5, can access application from anywhere
 
+---
+
 ### Internet of Things
 
 - AWS IOT: embed microcontroller, Rasberry PI to interact with cloud application and other devices
 - Amazon FreeRTOS: OS for micro-controller, to connect to AWS IOT
 - AWS Greengrass: local AWS lambda funciton, extends AWS services to devices
 
+---
+
 ### Game Dev
 
 - Amazon Gamelift: dedicated game servers
 - Amazon Lumberyard: game development env in the cloud
+
+---
 
 ### Elastic Beanstalk
 
@@ -177,12 +211,57 @@
   - process: create application -> upload version -> launch environment -> manage environment -> update environment
 - highly available and fault tolerant
 
+---
+
 ### Deployment Options
 
 - all at once. Bad down time.
 - rolling deploy: e.g. 20 EC2, deploy to 2 EC at a time
 - immutable: deploy all 20 new EC2, shutdown old. Temporarily double capacity. Zero downtime.
 - blue-green: one for dev, one for prod. Switch between environment.
+
+---
+
+## AWS Architecture Center
+
+- https://aws.amazon.com/architecture
+- case study: https://aws.amazon.com/architecture/well-architected
+- compliance: https://aws.amazon.com/compliance
+
+Five pillars
+
+1. operational excellence
+2. security
+3. reliability
+4. performance efficiency
+5. cost optimization
+
+---
+
+## CloudWatch
+
+- collect logs, metrcs, custom metrics of AWS resources
+  - billing
+  - dynamoDB
+  - ec2, ebs
+  - beanstalk
+  - kinesis firehose etc
+- resolution can be second (high-res) or minute (standard res) granularity
+- dashboard monitor
+- analyze with CloudWatch Log Insights
+- send off alarm if metric exceeds threshold for defined length of time
+- CloudWatch Alarm can trigger auto-scaling up/down
+
+---
+
+### Bookmarks
+
+- [ec2](./ec2.md)
+- [databases](./db.md)
+- [analytics](./analytics.md)
+- [deployment](./deploy.md)
+- [s3](./s3.md)
+- [vpc](./vpc.md)
 
 ### References
 
