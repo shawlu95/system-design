@@ -14,6 +14,16 @@ Why is Redis so fast
 - improve throughput with higher resource optimization
 - high availability (in case server goes down)
 
+### Concurrency
+
+Redis is synchronous and single-threaded in nature. It processes one command at a time, in the order it is received.
+
+How to avoid inconsistent write (e.g. two voters upvote an item at the same time)
+
+1. use `INC`, one HTTP request to Redis
+2. use `LOCK`
+3. use a Redis transaction with `WATCH`
+
 ---
 
 ## Types of Cache
