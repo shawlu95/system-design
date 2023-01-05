@@ -72,6 +72,10 @@ Answer follow-up questions, including:
 
 ---
 
+## Databases
+
+![alt-text](./assets/cap_db.png)
+
 ## Topics
 
 - [Server Sent Events](./topics/server_push.md)
