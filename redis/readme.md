@@ -66,6 +66,12 @@ How to avoid inconsistent write (e.g. two voters upvote an item at the same time
 4. put the resposne in cache
 5. return response
 
+### Key Design
+
+- Use `:` to separate entity: `item:18`, `users:45`
+- Use `#` before unique ID: `item#18`, `users#45:posts#16`
+- use `#` before url: `pagecache#/about`, `pagecache#/contact`
+
 ---
 
 ### Caching Strategies
