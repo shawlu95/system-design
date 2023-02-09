@@ -4,6 +4,9 @@ NoSQL database built on Hadoop, based on Google's BigTable.
 
 - all it offers is API for CRUD
 - no query language
+- favor consistency over availability
+- has single point of failure
+- in contrast, Cassandra gains availability and partition tolerance (and tunable consistency)
 
 ### Data Model
 
