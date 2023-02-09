@@ -74,6 +74,8 @@ Answer follow-up questions, including:
 
 ## Databases
 
+- [hbase intro](./hbase.md)
+
 ![alt-text](./assets/cap_db.png)
 
 ## Topics
