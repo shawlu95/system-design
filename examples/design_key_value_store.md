@@ -13,7 +13,7 @@ Optimize read-write:
 
 Real world implication:
 
-- partition is not available: we must choose consistency or availability
+- partition cannot be avoided: we must choose consistency or availability
   - choose consistency: if a partition is down, must block writes on all partitions
   - choose availability: some parittions will continue to write, others will be stale
 - use consistent hashing to parittion data
@@ -27,7 +27,7 @@ Real world implication:
 - W: number of nodes required to confirm write success
 - R: number of nodes required to confirm read success
 
-- **strong consistency**: achieved when `W + R > B` which means at least one node will have most recent write and serve it to read request
+- **strong consistency**: achieved when `W + R > N` which means at least one node will have most recent write and serve it to read request
 - **optimize for read**: R = 1, W = N
 - **optimize for write**: W = 1, R = N
 
