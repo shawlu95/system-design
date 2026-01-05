@@ -33,11 +33,11 @@ implicit requirement
 
 Estimation:
 
-- 1 billion a month => 10b / 30 / 24/ 3600 = 400 qps
+- 1 billion a month => 1e9 / 30 / 24 / 3600 = 400 qps
 - peak traffic 800 qps
 - avg html 500kb
-- 1 b pages _ 0.5mb = 1e9 _ 0.5e6 = 0.5e15 = 500e12 or 500 TB a month
-- store 5 years needs: 5 _ 12 _ 0.5 PB = 30 PB
+- 1 b pages * 0.5mb = 1e9 * 0.5e6 = 0.5e15 = 500e12 or 500 TB a month
+- store 5 years needs: 5 * 12 * 0.5 PB = 30 PB
 
 ### 2. Propose High-level Design
 
