@@ -82,7 +82,7 @@ Estimation:
 
 #### Robustness
 
-- consistent hashing: distirbute loads among downlaoders
+- consistent hashing: distirbute loads among downloaders
 - handle exception
 - validate data
 - save crawl state
