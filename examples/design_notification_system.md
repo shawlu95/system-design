@@ -19,7 +19,7 @@ iOS Push
 
 Android Push
 
-- Analog of APNS is **Firebase Cloud MEssaging (FCM)**
+- Analog of APNS is **Firebase Cloud Messaging (FCM)**
 
 SMS message
 
@@ -47,7 +47,7 @@ Components of system
   - validate emails, phone numbers
   - query DB and cache for info to build notification payload
   - stateless, support horizontal scaling
-  - use message queues (event bus) ot decouple components (iOS queue, Android queue, SMS queue, email queue)
+  - use message queues (event bus) to decouple components (iOS queue, Android queue, SMS queue, email queue)
   - workers node pull from message queues, build payload, and send to 3-party providers and wait for response
 - 3-party services: send out mobile push, SMS or email
 
