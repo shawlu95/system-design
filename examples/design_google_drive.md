@@ -34,8 +34,8 @@ Estimation
 - 10 million DAU
 - 10 GB free space per user
 - user upload 2 files per day, each 500kb
-- total storage space: 50 _ 10 ^ 6 _ 10 _ 10 ^ 9 = 5 _ 10 ^ 17 = 500 PB
-- QPS for upload: 10 _ 10 ^ 6 _ 2 / 86400 = 231
+- total storage space: 50e6 * 10e9 = 5e17 = 500 PB
+- QPS for upload: 10e6 * 2 / 86400 = 231 qps
   - peak QPS 462
 
 ### 2. Propose High-level Design
@@ -66,7 +66,7 @@ Strong consistency
 - different devices must not see different versions of file
 - data in all cache replicas must be consistent
 - invalidate cache on database write
-- MySQL us good candidate for maintaining ACID property on metadata
+- MySQL is good candidate for maintaining ACID property on metadata
 - a notification service is required to update client to rebuild files after update
   - use long polling, not web socket
   - when change is detected, client will close the long poll
